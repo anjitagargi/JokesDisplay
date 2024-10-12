@@ -1,0 +1,182 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px; /* Extra padding for smaller screens */
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #ff6b6b;
+  margin-top: 20px;
+  font-weight: 600;
+  animation: bounce 1s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.jokes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Joke card styling */
+.joke-card {
+  background-color: #ffecec;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  text-align: left;
+}
+
+.joke-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.joke-title {
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.joke-content {
+  font-size: 1rem;
+  color: #333;
+}
+
+.joke-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.laugh-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.laugh-button:hover {
+  background-color: #ff4b4b;
+}
+
+/* Responsive Design: Media Queries */
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .jokes-container {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+
+  .joke-card {
+    padding: 20px;
+    font-size: 0.9rem; /* Reduce font size on smaller screens */
+  }
+
+  .laugh-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .jokes-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+
+  .joke-card {
+    padding: 25px;
+  }
+
+  .laugh-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 901px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .jokes-container {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on large screens */
+  }
+
+  .joke-card {
+    padding: 30px;
+  }
+
+  .laugh-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
